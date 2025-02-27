@@ -5,16 +5,18 @@
  * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
  */
 
+declare(strict_types=1);
+
 namespace SprykerTest\Zed\SalesProductConfiguration;
 
 use Codeception\Actor;
 use Orm\Zed\SalesProductConfiguration\Persistence\SpySalesOrderItemConfiguration;
 use Orm\Zed\SalesProductConfiguration\Persistence\SpySalesOrderItemConfigurationQuery;
-use Propel\Runtime\Collection\ObjectCollection;
 
 /**
  * Inherited Methods
  *
+ * @method void wantTo($text)
  * @method void wantToTest($text)
  * @method void wantTo($text)
  * @method void execute($callable)
@@ -29,9 +31,9 @@ use Propel\Runtime\Collection\ObjectCollection;
  *
  * @SuppressWarnings(PHPMD)
  */
-class SalesProductConfigurationBusinessTester extends Actor
+class SalesProductConfigurationCommunicationTester extends Actor
 {
-    use _generated\SalesProductConfigurationBusinessTesterActions;
+    use _generated\SalesProductConfigurationCommunicationTesterActions;
 
     /**
      * @return void
@@ -44,33 +46,22 @@ class SalesProductConfigurationBusinessTester extends Actor
     }
 
     /**
+     * @param int $idSalesOrderItem
+     *
+     * @return \Orm\Zed\SalesProductConfiguration\Persistence\Base\SpySalesOrderItemConfiguration
+     */
+    public function findSalesOrderItemConfiguration(int $idSalesOrderItem): SpySalesOrderItemConfiguration
+    {
+        return $this->getSpySalesOrderItemConfigurationQuery()
+            ->filterByFkSalesOrderItem($idSalesOrderItem)
+            ->findOne();
+    }
+
+    /**
      * @return \Orm\Zed\SalesProductConfiguration\Persistence\SpySalesOrderItemConfigurationQuery
      */
     public function getSpySalesOrderItemConfigurationQuery(): SpySalesOrderItemConfigurationQuery
     {
         return SpySalesOrderItemConfigurationQuery::create();
-    }
-
-    /**
-     * @param int $idSalesOrderItem
-     *
-     * @return \Orm\Zed\SalesProductConfiguration\Persistence\SpySalesOrderItemConfiguration
-     */
-    public function createSalesOrderItemConfiguration(int $idSalesOrderItem): SpySalesOrderItemConfiguration
-    {
-        $salesOrderItemConfigurationEntity = (new SpySalesOrderItemConfiguration())
-            ->setFkSalesOrderItem($idSalesOrderItem)
-            ->setConfiguratorKey('test-configurator-key');
-        $salesOrderItemConfigurationEntity->save();
-
-        return $salesOrderItemConfigurationEntity;
-    }
-
-    /**
-     * @return \Propel\Runtime\Collection\ObjectCollection<\Orm\Zed\SalesProductConfiguration\Persistence\SpySalesOrderItemConfiguration>
-     */
-    public function getSalesOrderItemConfigurationEntities(): ObjectCollection
-    {
-        return $this->getSpySalesOrderItemConfigurationQuery()->find();
     }
 }
