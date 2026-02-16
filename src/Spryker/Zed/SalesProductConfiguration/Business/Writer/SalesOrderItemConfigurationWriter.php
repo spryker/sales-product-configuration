@@ -79,9 +79,9 @@ class SalesOrderItemConfigurationWriter implements SalesOrderItemConfigurationWr
     }
 
     /**
-     * @param list<\Generated\Shared\Transfer\SalesOrderItemConfigurationTransfer> $salesOrderItemConfigurationTransfers
+     * @param array<\Generated\Shared\Transfer\SalesOrderItemConfigurationTransfer> $salesOrderItemConfigurationTransfers
      *
-     * @return list<\Generated\Shared\Transfer\SalesOrderItemConfigurationTransfer>
+     * @return array<\Generated\Shared\Transfer\SalesOrderItemConfigurationTransfer>
      */
     protected function executeUpdateSalesOrderItemConfigurationsTransaction(
         array $salesOrderItemConfigurationTransfers
