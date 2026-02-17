@@ -5,7 +5,7 @@
  * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
  */
 
-namespace SprykerTest\Zed\SalesProductConfiguration\Business;
+namespace SprykerTest\Client\SalesProductConfiguration\Client;
 
 use ArrayObject;
 use Codeception\Test\Unit;
@@ -20,9 +20,9 @@ use Generated\Shared\Transfer\SalesOrderItemConfigurationTransfer;
  * Auto-generated group annotations
  *
  * @group SprykerTest
- * @group Zed
+ * @group Client
  * @group SalesProductConfiguration
- * @group Business
+ * @group Client
  * @group SalesProductConfigurationClientTest
  * Add your own group annotations below this line
  */
