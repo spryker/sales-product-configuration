@@ -16,9 +16,6 @@ use Spryker\Client\SalesProductConfiguration\Expander\ProductConfigurationItemEx
  */
 class SalesProductConfigurationFactory extends AbstractFactory
 {
-    /**
-     * @return \Spryker\Client\SalesProductConfiguration\Expander\ProductConfigurationItemExpanderInterface
-     */
     public function createProductConfigurationItemExpander(): ProductConfigurationItemExpanderInterface
     {
         return new ProductConfigurationItemExpander();

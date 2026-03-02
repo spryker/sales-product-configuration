@@ -18,18 +18,10 @@ class SalesOrderItemConfigurationWriter implements SalesOrderItemConfigurationWr
 {
     use TransactionTrait;
 
-    /**
-     * @param \Spryker\Zed\SalesProductConfiguration\Persistence\SalesProductConfigurationEntityManagerInterface $salesProductConfigurationEntityManager
-     */
     public function __construct(protected SalesProductConfigurationEntityManagerInterface $salesProductConfigurationEntityManager)
     {
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return void
-     */
     public function saveSalesOrderItemConfigurationsFromQuote(QuoteTransfer $quoteTransfer): void
     {
         $salesOrderItemConfigurationTransfers = $this->mapSalesOrderItemConfigurations($quoteTransfer);
@@ -43,11 +35,6 @@ class SalesOrderItemConfigurationWriter implements SalesOrderItemConfigurationWr
         });
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderItemCollectionResponseTransfer $salesOrderItemCollectionResponseTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderItemCollectionResponseTransfer
-     */
     public function updateSalesOrderItemConfigurations(
         SalesOrderItemCollectionResponseTransfer $salesOrderItemCollectionResponseTransfer
     ): SalesOrderItemCollectionResponseTransfer {
@@ -137,11 +124,6 @@ class SalesOrderItemConfigurationWriter implements SalesOrderItemConfigurationWr
         return $salesOrderItemConfigurationTransfers;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     *
-     * @return void
-     */
     protected function assertItemRequirements(ItemTransfer $itemTransfer): void
     {
         $itemTransfer

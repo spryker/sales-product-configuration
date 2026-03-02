@@ -37,12 +37,6 @@ class SalesProductConfigurationRepository extends AbstractRepository implements 
             ->mapSalesOrderItemConfigurationEntityCollectionToSalesOrderItemConfigurationTransfers($salesOrderItemConfigurationQuery->find());
     }
 
-    /**
-     * @param \Orm\Zed\SalesProductConfiguration\Persistence\SpySalesOrderItemConfigurationQuery $salesOrderItemConfigurationQuery
-     * @param \Generated\Shared\Transfer\SalesOrderItemConfigurationFilterTransfer $salesOrderItemConfigurationFilterTransfer
-     *
-     * @return \Orm\Zed\SalesProductConfiguration\Persistence\SpySalesOrderItemConfigurationQuery
-     */
     protected function setSalesOrderItemConfigurationFilters(
         SpySalesOrderItemConfigurationQuery $salesOrderItemConfigurationQuery,
         SalesOrderItemConfigurationFilterTransfer $salesOrderItemConfigurationFilterTransfer

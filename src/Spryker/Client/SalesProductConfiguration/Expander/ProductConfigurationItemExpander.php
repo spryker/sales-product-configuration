@@ -36,11 +36,6 @@ class ProductConfigurationItemExpander implements ProductConfigurationItemExpand
         return $itemTransfers;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductConfigurationInstanceTransfer
-     */
     protected function createProductConfigurationInstanceTransfer(
         ItemTransfer $itemTransfer
     ): ProductConfigurationInstanceTransfer {

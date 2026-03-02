@@ -11,18 +11,8 @@ use Generated\Shared\Transfer\SalesOrderItemConfigurationTransfer;
 
 interface SalesProductConfigurationEntityManagerInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderItemConfigurationTransfer $salesOrderItemConfigurationTransfer
-     *
-     * @return void
-     */
     public function saveSalesOrderItemConfiguration(SalesOrderItemConfigurationTransfer $salesOrderItemConfigurationTransfer): void;
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderItemConfigurationTransfer $salesOrderItemConfigurationTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderItemConfigurationTransfer
-     */
     public function saveSalesOrderItemConfigurationByFkSalesOrderItem(
         SalesOrderItemConfigurationTransfer $salesOrderItemConfigurationTransfer
     ): SalesOrderItemConfigurationTransfer;

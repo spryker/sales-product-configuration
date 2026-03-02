@@ -49,9 +49,6 @@ class HydrateCartReorderItemsWithProductConfigurationTest extends Unit
      */
     protected SalesProductConfigurationBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     public function testShouldAddReorderItemsWithProductConfigurationInstanceWhenItemWasNotAddedToReorderItems(): void
     {
         // Arrange
@@ -89,9 +86,6 @@ class HydrateCartReorderItemsWithProductConfigurationTest extends Unit
         $this->assertSame($orderItemTransfers[1]->getQuantityOrFail(), $reorderItemTransfer->getQuantity());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldAddProductConfigurationInstanceToReorderItemWhenItemWasPreviouslyAddedToReorderItems(): void
     {
         // Arrange
@@ -130,9 +124,6 @@ class HydrateCartReorderItemsWithProductConfigurationTest extends Unit
         $this->assertSame(static::TEST_CONFIGURATOR_KEY, $reorderItemTransfer->getProductConfigurationInstanceOrFail()->getConfiguratorKey());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldDoNothingWhenNoItemsWithSalesProductItemConfigurationProvided(): void
     {
         // Arrange

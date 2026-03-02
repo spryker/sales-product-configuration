@@ -26,9 +26,6 @@ use Spryker\Zed\SalesProductConfiguration\Business\Writer\SalesOrderItemConfigur
  */
 class SalesProductConfigurationBusinessFactory extends AbstractBusinessFactory
 {
-    /**
-     * @return \Spryker\Zed\SalesProductConfiguration\Business\Writer\SalesOrderItemConfigurationWriterInterface
-     */
     public function createSalesOrderItemConfigurationWriter(): SalesOrderItemConfigurationWriterInterface
     {
         return new SalesOrderItemConfigurationWriter(
@@ -36,9 +33,6 @@ class SalesProductConfigurationBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\SalesProductConfiguration\Business\Expander\OrderItemExpanderInterface
-     */
     public function createOrderItemExpander(): OrderItemExpanderInterface
     {
         return new OrderItemExpander(
@@ -46,25 +40,16 @@ class SalesProductConfigurationBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\SalesProductConfiguration\Business\Hydrator\CartReorderItemHydratorInterface
-     */
     public function createCartReorderItemHydrator(): CartReorderItemHydratorInterface
     {
         return new CartReorderItemHydrator();
     }
 
-    /**
-     * @return \Spryker\Zed\SalesProductConfiguration\Business\Deleter\SalesOrderItemConfigurationDeleterInterface
-     */
     public function createSalesOrderItemConfigurationDeleter(): SalesOrderItemConfigurationDeleterInterface
     {
         return new SalesOrderItemConfigurationDeleter($this->getEntityManager());
     }
 
-    /**
-     * @return \Spryker\Zed\SalesProductConfiguration\Business\Collector\SalesProductConfigurationSalesOrderItemCollectorInterface
-     */
     public function createSalesProductConfigurationSalesOrderItemCollector(): SalesProductConfigurationSalesOrderItemCollectorInterface
     {
         return new SalesProductConfigurationSalesOrderItemCollector();

@@ -14,12 +14,6 @@ use Generated\Shared\Transfer\SalesOrderAmendmentItemCollectionTransfer;
 
 class SalesProductConfigurationSalesOrderItemCollector implements SalesProductConfigurationSalesOrderItemCollectorInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\OrderTransfer $orderTransfer
-     * @param \Generated\Shared\Transfer\SalesOrderAmendmentItemCollectionTransfer $salesOrderAmendmentItemCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderAmendmentItemCollectionTransfer
-     */
     public function collect(
         OrderTransfer $orderTransfer,
         SalesOrderAmendmentItemCollectionTransfer $salesOrderAmendmentItemCollectionTransfer
@@ -48,12 +42,6 @@ class SalesProductConfigurationSalesOrderItemCollector implements SalesProductCo
         return $salesOrderAmendmentItemCollectionTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     * @param \Generated\Shared\Transfer\ItemTransfer $orderItemTransfer
-     *
-     * @return bool
-     */
     protected function isSameConfiguration(ItemTransfer $itemTransfer, ItemTransfer $orderItemTransfer): bool
     {
         $productConfigurationInstanceTransfer = $itemTransfer->getProductConfigurationInstance();

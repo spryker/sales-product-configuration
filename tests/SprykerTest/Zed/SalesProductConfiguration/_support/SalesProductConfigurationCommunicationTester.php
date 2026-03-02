@@ -35,9 +35,6 @@ class SalesProductConfigurationCommunicationTester extends Actor
 {
     use _generated\SalesProductConfigurationCommunicationTesterActions;
 
-    /**
-     * @return void
-     */
     public function ensureSalesOrderItemConfigurationDatabaseTableIsEmpty(): void
     {
         $this->ensureDatabaseTableIsEmpty(
@@ -57,9 +54,6 @@ class SalesProductConfigurationCommunicationTester extends Actor
             ->findOne();
     }
 
-    /**
-     * @return \Orm\Zed\SalesProductConfiguration\Persistence\SpySalesOrderItemConfigurationQuery
-     */
     public function getSpySalesOrderItemConfigurationQuery(): SpySalesOrderItemConfigurationQuery
     {
         return SpySalesOrderItemConfigurationQuery::create();

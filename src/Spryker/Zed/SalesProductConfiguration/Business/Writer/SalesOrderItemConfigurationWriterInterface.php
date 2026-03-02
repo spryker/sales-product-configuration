@@ -12,18 +12,8 @@ use Generated\Shared\Transfer\SalesOrderItemCollectionResponseTransfer;
 
 interface SalesOrderItemConfigurationWriterInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return void
-     */
     public function saveSalesOrderItemConfigurationsFromQuote(QuoteTransfer $quoteTransfer): void;
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderItemCollectionResponseTransfer $salesOrderItemCollectionResponseTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderItemCollectionResponseTransfer
-     */
     public function updateSalesOrderItemConfigurations(
         SalesOrderItemCollectionResponseTransfer $salesOrderItemCollectionResponseTransfer
     ): SalesOrderItemCollectionResponseTransfer;

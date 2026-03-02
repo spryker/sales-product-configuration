@@ -13,12 +13,6 @@ use Propel\Runtime\Collection\Collection;
 
 class SalesOrderItemConfigurationMapper
 {
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderItemConfigurationTransfer $salesOrderItemConfigurationTransfer
-     * @param \Orm\Zed\SalesProductConfiguration\Persistence\SpySalesOrderItemConfiguration $salesOrderItemConfigurationEntity
-     *
-     * @return \Orm\Zed\SalesProductConfiguration\Persistence\SpySalesOrderItemConfiguration
-     */
     public function mapSalesOrderItemConfigurationTransferToSalesOrderItemConfigurationEntity(
         SalesOrderItemConfigurationTransfer $salesOrderItemConfigurationTransfer,
         SpySalesOrderItemConfiguration $salesOrderItemConfigurationEntity
@@ -49,12 +43,6 @@ class SalesOrderItemConfigurationMapper
         return $salesOrderItemConfigurationTransfers;
     }
 
-    /**
-     * @param \Orm\Zed\SalesProductConfiguration\Persistence\SpySalesOrderItemConfiguration $salesOrderItemConfigurationEntity
-     * @param \Generated\Shared\Transfer\SalesOrderItemConfigurationTransfer $salesOrderItemConfigurationTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderItemConfigurationTransfer
-     */
     public function mapSalesOrderItemConfigurationEntityToSalesOrderItemConfigurationTransfer(
         SpySalesOrderItemConfiguration $salesOrderItemConfigurationEntity,
         SalesOrderItemConfigurationTransfer $salesOrderItemConfigurationTransfer

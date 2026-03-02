@@ -34,9 +34,6 @@ class DeleteSalesOrderItemConfigurationCollectionTest extends Unit
      */
     protected SalesProductConfigurationBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -45,9 +42,6 @@ class DeleteSalesOrderItemConfigurationCollectionTest extends Unit
         $this->tester->ensureSalesOrderItemConfigurationDatabaseTableIsEmpty();
     }
 
-    /**
-     * @return void
-     */
     public function testDeleteSalesOrderItemConfigurationEntitiesBySalesOrderItemIds(): void
     {
         // Arrange
@@ -69,9 +63,6 @@ class DeleteSalesOrderItemConfigurationCollectionTest extends Unit
         $this->assertSame($salesOrderItemConfigurationEntity->getIdSalesOrderItemConfiguration(), $salesOrderItemConfigurationEntities[0]->getIdSalesOrderItemConfiguration());
     }
 
-    /**
-     * @return void
-     */
     public function testDoesNotDeleteSalesOrderItemConfigurationEntitiesWhenNoEntitiesFoundBySalesOrderItemIds(): void
     {
         // Arrange
@@ -91,9 +82,6 @@ class DeleteSalesOrderItemConfigurationCollectionTest extends Unit
         $this->assertSame($salesOrderItemConfigurationEntity->getIdSalesOrderItemConfiguration(), $salesOrderItemConfigurationEntities[0]->getIdSalesOrderItemConfiguration());
     }
 
-    /**
-     * @return void
-     */
     public function testDoesNotDeleteSalesOrderItemConfigurationEntitiesWhenNoCriteriaConditionsAreSet(): void
     {
         // Arrange

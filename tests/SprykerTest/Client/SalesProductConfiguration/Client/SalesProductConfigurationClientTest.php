@@ -78,9 +78,6 @@ class SalesProductConfigurationClientTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     public function setUp(): void
     {
         parent::setUp();
@@ -88,9 +85,6 @@ class SalesProductConfigurationClientTest extends Unit
         $this->salesProductConfigurationClient = $this->tester->getClient();
     }
 
-    /**
-     * @return void
-     */
     public function testExpandItemsWithProductConfigurationFromPreviousOrderCheckExpanderSuccess(): void
     {
         //Arrange

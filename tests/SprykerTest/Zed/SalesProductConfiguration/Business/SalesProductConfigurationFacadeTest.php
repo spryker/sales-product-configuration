@@ -39,9 +39,6 @@ class SalesProductConfigurationFacadeTest extends Unit
      */
     protected const PRODUCT_CONFIGURATION_TEST_KEY = 'product_configuration_test_key';
 
-    /**
-     * @return void
-     */
     public function testSaveSalesOrderItemConfigurationsFromQuoteCheckSuccessSave(): void
     {
         //Arrange
@@ -74,9 +71,6 @@ class SalesProductConfigurationFacadeTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testSaveSalesOrderItemConfigurationsFromQuoteWillSkipProductConfigurationSaveWhenNoProductConfiguration(): void
     {
         //Arrange
@@ -99,9 +93,6 @@ class SalesProductConfigurationFacadeTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testSaveSalesOrderItemConfigurationsFromQuoteFailSalesOrderIdRequired(): void
     {
         //Arrange
@@ -121,9 +112,6 @@ class SalesProductConfigurationFacadeTest extends Unit
         $this->tester->getFacade()->saveSalesOrderItemConfigurationsFromQuote($quoteTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testSaveSalesOrderItemConfigurationsFromQuoteFailProductConfigurationKeyRequired(): void
     {
         //Arrange
@@ -141,9 +129,6 @@ class SalesProductConfigurationFacadeTest extends Unit
         $this->tester->getFacade()->saveSalesOrderItemConfigurationsFromQuote($quoteTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testExpandOrderItemsWithProductConfigurationCheckExpanderSuccess(): void
     {
         //Arrange

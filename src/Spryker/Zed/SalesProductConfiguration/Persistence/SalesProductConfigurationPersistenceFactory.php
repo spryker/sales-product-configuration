@@ -18,17 +18,11 @@ use Spryker\Zed\SalesProductConfiguration\Persistence\Propel\Mapper\SalesOrderIt
  */
 class SalesProductConfigurationPersistenceFactory extends AbstractPersistenceFactory
 {
-    /**
-     * @return \Orm\Zed\SalesProductConfiguration\Persistence\SpySalesOrderItemConfigurationQuery
-     */
     public function getSalesOrderItemConfigurationPropelQuery(): SpySalesOrderItemConfigurationQuery
     {
         return SpySalesOrderItemConfigurationQuery::create();
     }
 
-    /**
-     * @return \Spryker\Zed\SalesProductConfiguration\Persistence\Propel\Mapper\SalesOrderItemConfigurationMapper
-     */
     public function createSalesOrderItemConfigurationMapper(): SalesOrderItemConfigurationMapper
     {
         return new SalesOrderItemConfigurationMapper();

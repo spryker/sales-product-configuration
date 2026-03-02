@@ -17,9 +17,6 @@ class OrderItemExpander implements OrderItemExpanderInterface
      */
     protected $salesProductConfigurationRepository;
 
-    /**
-     * @param \Spryker\Zed\SalesProductConfiguration\Persistence\SalesProductConfigurationRepositoryInterface $salesProductConfigurationRepository
-     */
     public function __construct(SalesProductConfigurationRepositoryInterface $salesProductConfigurationRepository)
     {
         $this->salesProductConfigurationRepository = $salesProductConfigurationRepository;

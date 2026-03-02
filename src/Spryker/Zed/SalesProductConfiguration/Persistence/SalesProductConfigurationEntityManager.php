@@ -16,11 +16,6 @@ use Spryker\Zed\Kernel\Persistence\AbstractEntityManager;
  */
 class SalesProductConfigurationEntityManager extends AbstractEntityManager implements SalesProductConfigurationEntityManagerInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderItemConfigurationTransfer $salesOrderItemConfigurationTransfer
-     *
-     * @return void
-     */
     public function saveSalesOrderItemConfiguration(SalesOrderItemConfigurationTransfer $salesOrderItemConfigurationTransfer): void
     {
         $salesOrderItemConfigurationTransfer->requireIdSalesOrderItem();
@@ -35,11 +30,6 @@ class SalesProductConfigurationEntityManager extends AbstractEntityManager imple
         $salesOrderItemConfigurationEntity->save();
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesOrderItemConfigurationTransfer $salesOrderItemConfigurationTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesOrderItemConfigurationTransfer
-     */
     public function saveSalesOrderItemConfigurationByFkSalesOrderItem(
         SalesOrderItemConfigurationTransfer $salesOrderItemConfigurationTransfer
     ): SalesOrderItemConfigurationTransfer {

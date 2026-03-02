@@ -33,9 +33,6 @@ class SalesProductConfigurationBusinessTester extends Actor
 {
     use _generated\SalesProductConfigurationBusinessTesterActions;
 
-    /**
-     * @return void
-     */
     public function ensureSalesOrderItemConfigurationDatabaseTableIsEmpty(): void
     {
         $this->ensureDatabaseTableIsEmpty(
@@ -43,19 +40,11 @@ class SalesProductConfigurationBusinessTester extends Actor
         );
     }
 
-    /**
-     * @return \Orm\Zed\SalesProductConfiguration\Persistence\SpySalesOrderItemConfigurationQuery
-     */
     public function getSpySalesOrderItemConfigurationQuery(): SpySalesOrderItemConfigurationQuery
     {
         return SpySalesOrderItemConfigurationQuery::create();
     }
 
-    /**
-     * @param int $idSalesOrderItem
-     *
-     * @return \Orm\Zed\SalesProductConfiguration\Persistence\SpySalesOrderItemConfiguration
-     */
     public function createSalesOrderItemConfiguration(int $idSalesOrderItem): SpySalesOrderItemConfiguration
     {
         $salesOrderItemConfigurationEntity = (new SpySalesOrderItemConfiguration())

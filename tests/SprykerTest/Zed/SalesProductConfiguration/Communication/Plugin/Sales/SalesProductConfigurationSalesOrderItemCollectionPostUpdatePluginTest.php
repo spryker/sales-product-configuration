@@ -43,9 +43,6 @@ class SalesProductConfigurationSalesOrderItemCollectionPostUpdatePluginTest exte
      */
     protected SalesProductConfigurationCommunicationTester $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -54,9 +51,6 @@ class SalesProductConfigurationSalesOrderItemCollectionPostUpdatePluginTest exte
         $this->tester->ensureSalesOrderItemConfigurationDatabaseTableIsEmpty();
     }
 
-    /**
-     * @return void
-     */
     public function testShouldNotUpdateAnyProductConfigurations(): void
     {
         // Arrange
@@ -71,9 +65,6 @@ class SalesProductConfigurationSalesOrderItemCollectionPostUpdatePluginTest exte
         $this->assertSame(0, $this->tester->getSpySalesOrderItemConfigurationQuery()->count());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldCreateProductConfiguration(): void
     {
         // Arrange
@@ -90,9 +81,6 @@ class SalesProductConfigurationSalesOrderItemCollectionPostUpdatePluginTest exte
         $this->assertSalesOrderItemConfigurationEntity($quoteTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldUpdateProductConfiguration(): void
     {
         // Arrange
@@ -112,9 +100,6 @@ class SalesProductConfigurationSalesOrderItemCollectionPostUpdatePluginTest exte
         $this->assertSalesOrderItemConfigurationEntity($quoteTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldThrowRequiredTransferPropertyExceptionWhenIdSalesOrderItemIsNotSet(): void
     {
         // Arrange
@@ -134,9 +119,6 @@ class SalesProductConfigurationSalesOrderItemCollectionPostUpdatePluginTest exte
         (new SalesProductConfigurationSalesOrderItemCollectionPostUpdatePlugin())->postUpdate($salesOrderItemCollectionResponseTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldThrowRequiredTransferPropertyExceptionWhenConfigurationKeyIsNotSet(): void
     {
         // Arrange
@@ -156,11 +138,6 @@ class SalesProductConfigurationSalesOrderItemCollectionPostUpdatePluginTest exte
         (new SalesProductConfigurationSalesOrderItemCollectionPostUpdatePlugin())->postUpdate($salesOrderItemCollectionResponseTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return void
-     */
     protected function assertSalesOrderItemConfigurationEntity(QuoteTransfer $quoteTransfer): void
     {
         /** @var \Generated\Shared\Transfer\ItemTransfer $itemTransfer */
@@ -174,11 +151,6 @@ class SalesProductConfigurationSalesOrderItemCollectionPostUpdatePluginTest exte
         $this->assertSame($productConfigurationInstanceTransfer->getConfiguratorKey(), $salesOrderItemConfigurationEntity->getConfiguratorKey());
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductConfigurationInstanceTransfer|null $productConfigurationInstanceTransfer
-     *
-     * @return \Generated\Shared\Transfer\QuoteTransfer
-     */
     protected function createOrder(?ProductConfigurationInstanceTransfer $productConfigurationInstanceTransfer = null): QuoteTransfer
     {
         $quoteTransfer = (new QuoteBuilder())
